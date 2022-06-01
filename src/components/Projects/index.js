@@ -18,7 +18,7 @@ function Projects() {
         <Card
           title="Portefolio"
           picture={portefolio}
-          link="http://www.benjamingodey.fr"
+          link="https://github.com/BenjaminGodey/Portefolio"
           presentation="Site perso réalisé avec React"
         />
         <Card
