@@ -5,14 +5,14 @@ import "./timeline.scss";
 function Timeline() {
   return (
     <section id="parcours" className="timeline">
-      <div class="tl-item">
-        <div class="tl-bg tl-bg__studies"></div>
+      <div className="tl-item">
+        <div className="tl-bg tl-bg__studies"></div>
 
-        <div class="tl-year">
-          <p class="f2 heading--sanSerif">2007 2010</p>
+        <div className="tl-year">
+          <p className="f2 heading--sanSerif">2007 2010</p>
         </div>
 
-        <div class="tl-content">
+        <div className="tl-content">
           <h1>Etudes</h1>
           <p>
             Après avoir obtenu un BTS Management des unités commerciales en
@@ -23,15 +23,15 @@ function Timeline() {
         </div>
       </div>
 
-      <div class="tl-item">
-        <div class="tl-bg tl-bg__supermarket"></div>
+      <div className="tl-item">
+        <div className="tl-bg tl-bg__supermarket"></div>
 
-        <div class="tl-year">
-          <p class="f2 heading--sanSerif">2010 2016</p>
+        <div className="tl-year">
+          <p className="f2 heading--sanSerif">2010 2016</p>
         </div>
 
-        <div class="tl-content">
-          <h1 class="f3 text--accent ttu">Grande Distribution</h1>
+        <div className="tl-content">
+          <h1 className="f3 text--accent ttu">Grande Distribution</h1>
           <p>
             J'ai occupé des postes d'adjoint, de manager de rayon et de
             responsable de superette. Ces éxperiences m'ont permises d'acquérir
@@ -40,15 +40,15 @@ function Timeline() {
         </div>
       </div>
 
-      <div class="tl-item">
-        <div class="tl-bg tl-bg__bank"></div>
+      <div className="tl-item">
+        <div className="tl-bg tl-bg__bank"></div>
 
-        <div class="tl-year">
-          <p class="f2 heading--sanSerif">2016 2021</p>
+        <div className="tl-year">
+          <p className="f2 heading--sanSerif">2016 2021</p>
         </div>
 
-        <div class="tl-content">
-          <h1 class="f3 text--accent ttu">Secteur bancaire</h1>
+        <div className="tl-content">
+          <h1 className="f3 text--accent ttu">Secteur bancaire</h1>
           <p>
             J'ai évolué du poste de conseiller en ligne jusqu'au poste de
             conseiller financier. J'ai pu acquérir des compétences de rigueur,
@@ -57,15 +57,15 @@ function Timeline() {
         </div>
       </div>
 
-      <div class="tl-item">
-        <div class="tl-bg tl-bg__computer"></div>
+      <div className="tl-item">
+        <div className="tl-bg tl-bg__computer"></div>
 
-        <div class="tl-year">
-          <p class="f2 heading--sanSerif">2021 2022</p>
+        <div className="tl-year">
+          <p className="f2 heading--sanSerif">2021 2022</p>
         </div>
 
-        <div class="tl-content">
-          <h1 class="f3 text--accent ttu">Développeur Web</h1>
+        <div className="tl-content">
+          <h1 className="f3 text--accent ttu">Développeur Web</h1>
           <p>
             J'ai suivi la formation Développeur Web avec spécialisation React
             délivrée par l'école O'Clock du 12/2021 au 05/2022. Cette formation

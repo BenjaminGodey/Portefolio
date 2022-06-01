@@ -40,7 +40,7 @@ function Card({ picture, title, presentation, link }) {
                   setIsFlip(!isFlip);
                 }}
               >
-                <i class="flip__arrow fa-solid fa-arrow-rotate-right"></i>
+                <i className="flip__arrow fa-solid fa-arrow-rotate-right"></i>
               </button>
             </header>
             <p className="text__presentation">{presentation}</p>

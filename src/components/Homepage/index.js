@@ -46,7 +46,7 @@ function Homepage() {
               <tr className="main__table--tr">
                 <td className="main__table--logo">
                   <div className="main__table--div">
-                    <i class="table-icon fa-brands fa-html5"></i>
+                    <i className="table-icon fa-brands fa-html5"></i>
                   </div>
                 </td>
                 <td className="main__table--logo">

@@ -49,7 +49,7 @@ function Contact() {
               width="100%"
               height="100%"
               viewBox="0 0 300 300"
-              enable-background="new 0 0 300 300"
+              enableBackground="new 0 0 300 300"
               xmlSpace="preserve"
             >
               <defs>
@@ -86,7 +86,7 @@ function Contact() {
               width="100%"
               height="100%"
               viewBox="0 0 300 300"
-              enable-background="new 0 0 300 300"
+              enableBackground="new 0 0 300 300"
               xmlSpace="preserve"
             >
               <defs>
