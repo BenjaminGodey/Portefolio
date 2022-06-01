@@ -1,0 +1,177 @@
+@use "src/styles/vars";
+.header {
+  background: url("../../assets/img/wall-textured.jpeg");
+  // 90vh on first page because of nav size in position sticky
+  height: 90vh;
+  width: 100%;
+    &__container {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    &__logo {
+      width: 80%;
+    }
+    &__subtitle {
+      width: 50%;
+      margin-top: 1vw;
+      color: white;
+      font-size: max(20px, 2vw);
+      overflow: hidden;
+      border-right: 0.15em solid white;
+      white-space: nowrap;
+      // First typing animation, and after hide <h2>
+      animation: typing 2s steps(20, end) forwards,
+        upAnimation 0s ease-in 2.5s forwards;
+      width: 0;
+    }
+    &__title {
+      width: 80%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      margin: 0px auto;
+      margin-top: 0;
+      font-family: "Playfair Display", serif;
+    }
+    &__1 {
+      width: 70%;
+      margin: 0 auto;
+      font-size: max(60px, 8vw);
+      display: flex;
+      text-align: left;
+    }
+    &__2-3-container {
+      display: flex;
+      align-items: flex-start;
+      width: 80%;
+      margin: 0 auto;
+      justify-content: flex-end;
+    }
+    &__2 {
+      font-size: max(50px, 5vw);
+    }
+    &__3 {
+      font-size: max(60px, 9.5vw);
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+      text-align: right;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -40%;
+        left: -10%;
+        z-index: -1;
+        background-image: linear-gradient(
+          120deg,
+          vars.$mainColor 0%,
+          vars.$mainColor 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 50% 0.9em;
+        background-position: 0 95%;
+        transition: background-size 0.25s ease-in, transform 0.25s ease-in;
+
+      }
+      &:hover:before {
+        background-size: 50% 88%;
+        transform: skew(-20deg);
+      }
+    }
+    &__3--scroll::before {
+      background-size: 50% 88%;
+      transform: skew(-20deg);
+    }
+
+    &__span {
+      display: inline;
+      animation: hideAnimation 0s ease-in 2.5s forwards;
+    }
+}
+.icon-scroll,
+.icon-scroll:before {
+  position: absolute;
+  left: 50%;
+}
+.icon-scroll {
+  width: 40px;
+  height: 70px;
+  margin-left: -20px;
+  top: 90%;
+  margin-top: -35px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+}
+.icon-scroll:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(46px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(46px);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes hideAnimation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes upAnimation {
+  to {
+    font-size: 3vw;
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .header {
+    &__title {
+      height: 50%;
+      justify-content: center;
+    }
+    &__2-3-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__1 {
+      justify-content: center;
+    }
+  }
+}

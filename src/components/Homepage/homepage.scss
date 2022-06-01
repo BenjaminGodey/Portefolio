@@ -1,0 +1,174 @@
+@use "src/styles/vars";
+.main {
+  height: 100vh;
+  background-color: #dadce6;
+  display: flex;
+    &--scroll {
+        background-color: red;
+    }
+    &__left {
+        width: 40%;
+        height: 100%;
+        border-right: 1px solid black;
+        background-image: url("../../assets/img/mac.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__right {
+        width: 60%;
+        height: 100%;
+        padding-top: 10vh;
+    }
+    &__table {
+        width: 80%;
+        margin: 0 auto;
+        &--logo {
+        background-color: #233439;
+        width: calc(100% / 6);
+        height: 3.5vw;
+        vertical-align: middle;
+        }
+        &--tr {
+        background-color: #233439;
+        border: 2px solid #233439;
+        width: 100%;
+        }
+        &--td {
+        border: 1px solid black;
+        width: calc(100% / 3);
+        vertical-align: middle;
+        }
+        &--div {
+        height: 2vw;
+        width: 2vw;
+        border-radius: 50%;
+        background-color: white;
+        vertical-align: middle;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        &:hover .table-icon {
+            transform: rotateY(360deg);
+        }
+        }
+        & th {
+        border: 2px solid vars.$mainColor;
+        background-color: vars.$mainColor;
+        height: 3.5vw;
+        font-size: max(20px, 1.7vw);
+        font-weight: bold;
+        vertical-align: middle;
+        }
+        & tr {
+        height: 3vw;
+        }
+    }
+    }
+.profil {
+  width: 100%;
+  padding-top: 10vh;
+  &__picture {
+    border-radius: 50%;
+    width: 30%;
+    margin: 10px auto 0px auto;
+  }
+  &__text {
+    width: 60%;
+    text-align: center;
+    margin: 10px auto;
+  }
+  &__title {
+    font-size: max(50px, 5vw);
+    font-family: rotonto;
+    &__span {
+      color: vars.$mainColor;
+      text-shadow: 0 0 10px white;
+      animation: blur 1.5s infinite;
+    }
+  }
+  &__container {
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+i {
+  margin: 0 auto;
+  vertical-align: middle;
+  font-size: 1.4vw;
+  transition: 0.4s ease-out;
+  &:hover {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes changeColor {
+  to {
+    background-color: vars.$mainColor;
+  }
+}
+
+.tdimension {
+  width: 250px;
+  height: 250px;
+  margin: 10px auto 10px auto;
+  perspective: 1000px;
+}
+.tdimension .picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/img/portrait.jpeg");
+  background-size: cover;
+  transform-style: preserve-3d;
+  transform: rotateX(70deg);
+  transition: all 0.8s;
+}
+
+.tdimension--scroll .picture {
+  transform: rotateX(5deg);
+}
+.tdimension .picture:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+}
+
+@media screen and (max-width: 769px) {
+  .main {
+    &__left {
+      display: none;
+    }
+    &__right {
+      width: 100%;
+    }
+  }
+  .profil {
+    &__container {
+      justify-content: flex-start;
+    }
+    &__text {
+      width: 90%;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+  }
+  .main__table tr {
+    height: 5vw;
+  }
+  .main__table--div {
+    height: 3vw;
+    width: 3vw;
+  }
+  .table-icon {
+    font-size: 2vw;
+  }
+}

@@ -1,0 +1,239 @@
+@use "src/styles/vars";
+
+.contact {
+  height: 100vh;
+  background-color: #233439;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+    &__title {
+        padding-top: 15vh;
+        font-size: max(20px, 7vw);
+        font-family: rotonto;
+        color: white;
+        &__span {
+        color: vars.$mainColor;
+        text-shadow: 0 0 10px white;
+        animation: blur 1.5s infinite;
+        }
+    }
+    &__container {
+        width: 60%;
+        height: 0%;
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 20px 20px 0px 0px;
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in;
+        // Show contact container at scroll
+        &--scroll {
+        height: 60%;
+        }
+    }
+    &__text {
+        font-size: max(30px, 6vw);
+        padding: 10px;
+    }
+    &__email {
+        color: black;
+        font-size: max(20px, 4vw);
+        &--arobase {
+        color: vars.$mainColor;
+        }
+    }
+    &__mail {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    &__github {
+        width: 50%;
+        height: 40%;
+        background-color: #6e5494;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+    }
+    &__linkedin {
+        width: 50%;
+        height: 40%;
+        background-color: #0077b5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+    }
+    &__link {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__logo {
+        width: 80px;
+        height: 80px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        // Center logo container in div
+        // Use position absolute to have text around div
+        position: absolute;
+        left: 0;
+        margin: auto;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        &:hover .contact__icon {
+        transform: rotateY(360deg);
+        }
+        &--github {
+        color: #6e5494;
+        background-color: white;
+        transition: all 0.5s ease-in;
+        }
+        &--github:hover {
+        background-color: #6e5494;
+        color: white;
+        }
+        &--linkedin {
+        color: #0077b5;
+        background-color: white;
+        transition: all 0.5s ease-in;
+        }
+        &--linkedin:hover {
+        background-color: #0077b5;
+        color: white;
+        }
+    }
+    &__icon {
+        font-size: 3em;
+    }
+}
+
+#circle {
+  position: relative;
+  width: 90%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+#circle text {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#circle svg {
+  position: absolute;
+  width: 90%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  -webkit-animation-name: rotate;
+  -moz-animation-name: rotate;
+  -ms-animation-name: rotate;
+  -o-animation-name: rotate;
+  animation-name: rotate;
+  -webkit-animation-duration: 5s;
+  -moz-animation-duration: 5s;
+  -ms-animation-duration: 5s;
+  -o-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+  }
+}
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(360deg);
+  }
+  to {
+    -moz-transform: rotate(0);
+  }
+}
+@-ms-keyframes rotate {
+  from {
+    -ms-transform: rotate(360deg);
+  }
+  to {
+    -ms-transform: rotate(0);
+  }
+}
+@-o-keyframes rotate {
+  from {
+    -o-transform: rotate(360deg);
+  }
+  to {
+    -o-transform: rotate(0);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+// use to breack in middle of mail adress on small device
+@media screen and (max-width: 769px) {
+  .contact__email--breack {
+    display: block;
+  }
+}
+
+// Increse size to fit around circle
+// TODO make responsive logo (%?)
+@media screen and (min-width: 1350px) {
+  .contact {
+    &__logo {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #circle {
+    width: 150%;
+  }
+}
+
+// hide circle text on small device
+@media screen and (max-width: 748px) {
+  #circle {
+    display: none;
+  }
+}

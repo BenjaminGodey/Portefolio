@@ -1,0 +1,161 @@
+@use 'src/styles/vars';
+.timeline {
+  height: 100vh;
+  background: rgb(35,52,57);
+  background: linear-gradient(90deg, rgba(35,52,57,1) 0%, rgba(64,101,112,1) 100%);
+  display: flex;
+}
+  
+  #timeline {
+    display: flex;
+    background-color: #031625;
+  
+    &:hover {
+      .tl-item {
+        width: 23.3333%;
+      }
+    }
+  }
+  
+  .tl-item {
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    width: 25%;
+    height: 100vh;
+    min-height: 600px;
+    color: #fff;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    
+    &:before, &:after {
+      transform: translate3d(0, 0, 0);
+      content: '';
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+    }
+  
+    &:after {
+      background: transparentize(#031625, 0.15);
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+  
+    &:before {
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+      z-index: 1;
+      opacity: 0;
+      transform: translate3d(0, 0, 0) translateY(50%);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+  
+    &:hover {
+      width: 30% !important;
+      
+      &:after {
+        opacity: 0;
+      }
+  
+      &:before {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) translateY(0);
+        transition: opacity 1s ease, transform 1s ease 0.25s;
+      }
+      
+      .tl-content {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.75s ease 0.5s;
+      }
+  
+      .tl-bg {
+        filter: grayscale(0);
+      }
+    }
+  }
+  
+  .tl-content {
+    transform: translate3d(0, 0, 0) translateY(25px);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin: 0 1.618em;
+    top: 55%;
+    opacity: 0;
+    
+    h1 {
+      font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+      text-transform: uppercase;
+      color: vars.$mainColor ;
+      font-size: 1.44rem;
+      font-weight: normal;
+    }
+  }
+  
+  .tl-year {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+
+    p {
+      font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+      font-size: 1.728rem;
+    }
+  }
+  
+  .tl-bg {
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background-size: cover;
+    background-position: center center;
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+    &__bank {
+        background-image: url('../../assets/img/atm.jpeg');;
+    }
+    &__supermarket {
+        background-image: url('../../assets/img/supermarket.jpeg');
+    }
+    &__studies {
+       background-image: url('../../assets/img/studies.jpeg');
+    }
+    &__computer {
+      background-image: url('../../assets/img/computer.jpeg');
+    }
+  }
+
+  @media screen and (max-width: 769px) {
+    // Change direction from vertical to horizontal on mobile
+    .timeline {
+      flex-direction: column;
+    }
+    .tl-item{
+      height: 25%;
+      width: 100%;
+      min-height: 0%;
+      &:hover {
+        width: 100% !important;
+      }
+      &:hover .tl-year{
+        top: 10%;
+      }
+    }
+    .tl-content {
+      top: 20%
+    }
+    .tl-content h1 {
+      font-size: 1rem;
+    }
+
+  }
+
+  @media screen and (max-width: 425px) {
+    .tl-content p {
+      margin-top: 10px;
+      font-size: 0.8rem;
+    }
+  }
