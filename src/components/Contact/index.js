@@ -54,11 +54,10 @@ function Contact() {
         <div className="contact__mail">
           <form className="form"
           onSubmit={onSubmit}>
-{/*           <div className="form__users-info"> */}
             <input
               className="form__input form__input--mail"
               type="text"
-              name="Nom"
+              name="from_name"
               placeholder="Nom"
               value={toSend.from_name}
               onChange={handleChange}
@@ -71,7 +70,6 @@ function Contact() {
               value={toSend.reply_to}
               onChange={handleChange}
             />
-{/*             </div> */}
             <textarea
               className="form__input form__input--message"
               type="text"
