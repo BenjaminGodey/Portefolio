@@ -25,47 +25,7 @@
         height: 90vh;
         padding-top: 10vh;
     }
-    &__table {
-        width: 80%;
-        margin: 0 auto;
-        &--logo {
-        background-color: #233439;
-        width: calc(100% / 6);
-        height: 5.5vw;
-        vertical-align: middle;
-        }
-        &--div {
-        height: 3vw;
-        width: 3vw;
-        border-radius: 50%;
-        background-color: white;
-        vertical-align: middle;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        &:hover .table-icon {
-            transform: rotateY(360deg);
-        }
-        }
-        & th {
-        border: 2px solid vars.$mainColor;
-        background-color: vars.$mainColor;
-        height: 3.5vw;
-        font-size: max(20px, 1.7vw);
-        font-weight: bold;
-        vertical-align: middle;
-        }
-        & tr {
-        height: 3vw;
-        }
-    }
-    }
-.table__name {
-  color: white;
 }
-/* .table-icon {
-  font-size: 90%;
-} */
 .profil {
   width: 100%;
   padding-top: 10vh;
@@ -219,4 +179,3 @@ i {
     font-size: 3rem;
   }
 }
-

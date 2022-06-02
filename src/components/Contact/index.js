@@ -1,12 +1,11 @@
 // == Import NPM
 import { useState, useEffect } from "react";
-
+import { send } from "@emailjs/browser";
 // == import styles
 import "./contact.scss";
 
 // == Component
 function Contact() {
-
   const [scrollContact, setScrollContact] = useState(false);
 
   // Show contact container when user scroll 3.7 windows size (1 innerHeigt = 100vh)
@@ -15,6 +14,30 @@ function Contact() {
       setScrollContact(window.scrollY > window.innerHeight * 3.7);
     });
   }, []);
+
+  const [toSend, setToSend] = useState({
+    from_name: "",
+    message: "",
+    reply_to: "",
+  });
+
+  const [emailSent, setEmailSent] = useState(false);
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    send("service_fbim1nh", "template_lcbctrc", toSend, "aE48_2NTVNVwaSGHs")
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setEmailSent(true);
+      })
+      .catch((err) => {
+        alert("Erreur...", err);
+      });
+  };
 
   return (
     <section className="contact" id="contact">
@@ -29,16 +52,44 @@ function Contact() {
         }
       >
         <div className="contact__mail">
-          <p className="contact__text">N'hésitez pas à m'écrire:</p>
-          <p className="contact__email">
-            contact
-            <span className="contact__email--breack">
-              <span className="contact__email--arobase">@</span>benjamingodey.fr
-            </span>
-          </p>
+          <form className="form"
+          onSubmit={onSubmit}>
+{/*           <div className="form__users-info"> */}
+            <input
+              className="form__input form__input--mail"
+              type="text"
+              name="Nom"
+              placeholder="Nom"
+              value={toSend.from_name}
+              onChange={handleChange}
+            />
+            <input
+              className="form__input form__input--mail"
+              type="text"
+              name="reply_to"
+              placeholder="Email"
+              value={toSend.reply_to}
+              onChange={handleChange}
+            />
+{/*             </div> */}
+            <textarea
+              className="form__input form__input--message"
+              type="text"
+              name="message"
+              placeholder="Votre Message"
+              value={toSend.message}
+              onChange={handleChange}
+            />
+
+            <button className="form__button" type="submit">Envoyer</button>
+            
+          </form>
+          {emailSent && 
+            <p className="contact__success">Envoi du formulaire effectué</p>
+          }
         </div>
         <div className="contact__github">
-        {/* SVG to animate letter arround circle */}
+          {/* SVG to animate letter arround circle */}
           <div id="circle">
             <svg
               version="1.1"
