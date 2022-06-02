@@ -1,5 +1,13 @@
 @use 'src/styles/vars';
 
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 150px 100px 0;
+  border-color: vars.$mainColor transparent transparent transparent;
+
+}
 .fx-wrap {
     display: inline-block;
     padding-top: 20px;
@@ -71,14 +79,27 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 216px;
+    width: 100%;
     float: right;
     &__title {
       color: vars.$mainColor;
-      font-size: 2em;
+      font-size: 3em;
+      font-weight: bold;
       margin: 30px auto;
       width: 80%;
       flex: 2;
+      text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #0f9599,
+        1px 3px 1px #0f9599,
+        1px 4px 1px #0f9599,
+        1px 5px 1px #0f9599,
+        1px 6px 1px #147275,
+        1px 7px 1px #147275,
+
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
     }
     &__header {
       width: 100%;
@@ -110,13 +131,20 @@
       }
       &:hover .flip__arrow {
         transform: rotate(-360deg);
+        color: white;
       }
+    &__arrow {
+      font-size: 90%;
+      color: vars.$mainColor;
+      animation: 2s move linear infinite;
+    }
       
   }
 
 .front {
     z-index: 2;
     transform: rotateY(0deg);
+    background-size: cover;
     &__image {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
@@ -150,6 +178,14 @@
   .fx-wrap .card.flip-it>.front:before,
   .fx-wrap .card.flip-it>.back:before {
     background-position: -324px 0;
+  }
+
+  @keyframes move {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(-50deg);}
+    50% {transform: rotate(0deg);}
+    75% {transform: rotate(50deg);}
+    100% {transform: rotate(0deg);}
   }
   
  

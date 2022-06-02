@@ -12,11 +12,7 @@ function Card({ picture, title, presentation, link }) {
   return (
     <div className="fx-wrap">
       <div className={isFlip ? "card flip-it" : "card"}>
-        <div className="front">
-          <div
-            style={{ backgroundImage: `url(${picture})` }}
-            className="front__image"
-          ></div>
+        <div className="front" style={{ backgroundImage: `url(${picture})` }}>
           <div className="text">
             <header className="text__header">
               <button
@@ -48,7 +44,9 @@ function Card({ picture, title, presentation, link }) {
               See more
             </a>
           </div>
+          <div className="triangle"></div>
         </div>
+
       </div>
     </div>
   );
