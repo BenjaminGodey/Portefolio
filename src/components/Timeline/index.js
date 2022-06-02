@@ -17,7 +17,7 @@ function Timeline() {
           <p>
             Après avoir obtenu un BTS Management des unités commerciales en
             alternance dans un supermarché, j'ai décidé de poursuivre sur la
-            voie de l'alternance en obtenant une licence professionelle Commerce
+            voie de l'alternance en obtenant une licence professionnelle Commerce
             Distribution Distech{" "}
           </p>
         </div>
@@ -34,7 +34,7 @@ function Timeline() {
           <h1 className="f3 text--accent ttu">Grande Distribution</h1>
           <p>
             J'ai occupé des postes d'adjoint, de manager de rayon et de
-            responsable de superette. Ces éxperiences m'ont permises d'acquérir
+            responsable de superette. Ces expériences m'ont permis d'acquérir
             des compétences en management et en organisation.
           </p>
         </div>
@@ -69,8 +69,8 @@ function Timeline() {
           <p>
             J'ai suivi la formation Développeur Web avec spécialisation React
             délivrée par l'école O'Clock du 12/2021 au 05/2022. Cette formation
-            m'a permise d'acéquérir des bases solides en back et en front à
-            travers la praique de différents langages (Html, Php, JS..)
+            m'a permise d'acquérir des bases solides en back et en front à
+            travers la pratique de différents langages (Html, Php, JS..)
           </p>
         </div>
       </div>

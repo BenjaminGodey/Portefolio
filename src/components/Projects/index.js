@@ -4,8 +4,8 @@ import Card from "../Card";
 import "./projects.scss";
 
 // == Import local
-import portefolio from "../../assets/img/mon-site.png";
-import myWallet from "../../assets/img/my-wallet.png";
+import portefolio from "../../assets/img/mon-site.jpg";
+import myWallet from "../../assets/img/my-wallet.jpg";
 
 // == Component
 function Projects() {
