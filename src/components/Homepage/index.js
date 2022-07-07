@@ -2,11 +2,10 @@
 import { useEffect, useState } from "react";
 
 // == Import styles
-import "./homepage.scss"
+import "./homepage.scss";
 
 // == Component
 function Homepage() {
-
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
@@ -16,10 +15,7 @@ function Homepage() {
   }, []);
 
   return (
-    <main
-      id="accueil"
-      className="main"
-    >
+    <main id="accueil" className="main">
       {/* Empty Div for background image and facilitate responsive */}
       <div className="main__left"></div>
       <div className="main__right">
@@ -38,44 +34,44 @@ function Homepage() {
           </p>
           <div className="profil__skills">
             <div className="profil__item">
-            <div className="profil__div">
-              <i className="profil__icon fa-brands fa-html5"></i>
-            </div>
+              <div className="profil__div">
+                <i className="profil__icon fa-brands fa-html5"></i>
+              </div>
               <p className="profil__name">HTML</p>
             </div>
             <div className="profil__item">
-            <div className="profil__div">
-              <i className="profil__icon fa-brands fa-css3"></i>
-            </div>
-              <p className="profil__name">CSS</p>
+              <div className="profil__div">
+                <i className="profil__icon fab fa-symfony"></i>
+              </div>
+              <p className="profil__name">Symfony</p>
             </div>
             <div className="profil__item">
-            <div className="profil__div">
-              <i className="profil__icon fa-brands fa-php"></i>
-            </div>
+              <div className="profil__div">
+                <i className="profil__icon fa-brands fa-php"></i>
+              </div>
               <p className="profil__name">PHP</p>
             </div>
             <div className="profil__item">
-            <div className="profil__div">
-              <i className="profil__icon fa-solid fa-database"></i>
-            </div>
+              <div className="profil__div">
+                <i className="profil__icon fa-solid fa-database"></i>
+              </div>
               <p className="profil__name">SQL</p>
             </div>
             <div className="profil__item">
-            <div className="profil__div">
-              <i className="profil__icon fa-brands fa-js"></i>
-            </div>
+              <div className="profil__div">
+                <i className="profil__icon fa-brands fa-js"></i>
+              </div>
               <p className="profil__name">Javascript</p>
             </div>
             <div className="profil__item">
-            <div className="profil__div">
-              <i className="profil__icon fa-brands fa-react"></i>
-            </div>
+              <div className="profil__div">
+                <i className="profil__icon fa-brands fa-react"></i>
+              </div>
               <p className="profil__name">React</p>
             </div>
           </div>
-          
-{/*           <table className="main__table">
+
+          {/*           <table className="main__table">
             <thead>
               <tr>
                 <th colSpan="6">Langages</th>

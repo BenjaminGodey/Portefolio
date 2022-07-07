@@ -4,7 +4,7 @@ import Card from "../Card";
 import "./projects.scss";
 
 // == Import local
-import portefolio from "../../assets/img/mon-site.jpg";
+import harry from "../../assets/img/harry.jpeg";
 import myWallet from "../../assets/img/my-wallet.jpg";
 
 // == Component
@@ -16,10 +16,10 @@ function Projects() {
       </h1>
       <div>
         <Card
-          title="Portefolio"
-          picture={portefolio}
-          link="https://github.com/BenjaminGodey/Portefolio"
-          presentation="Site perso réalisé avec React"
+          title="Harry P"
+          picture={harry}
+          link="https://harrypotter.benjamingodey.fr/"
+          presentation="Front réalisé avec React et Redux, API crée via Symfony"
         />
         <Card
           title="My Wallet"
