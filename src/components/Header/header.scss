@@ -1,7 +1,7 @@
 @use "src/styles/vars";
 .header {
   animation: scrollBackground 130s linear infinite;
-  background: url("../../assets/img/homepage/wall-texture.jpeg");
+  background: url("../../assets/img/header/wall-texture.jpeg");
   perspective: 1000px;
   perspective-origin: 50% 50%;
   // 90vh on first page because of nav size in position sticky

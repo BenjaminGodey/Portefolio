@@ -4,30 +4,28 @@ import { useEffect, useState } from "react";
 // == Import styles
 import "./homepage.scss";
 
+// == Import Local
+import portrait from "../../assets/img/homepage/portrait.jpeg";
+
 // == Component
 function Homepage() {
-  const [scroll, setScroll] = useState(false);
+  const [isShowPicture, setIsShowPicture] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > window.innerHeight * 0.5);
+      setIsShowPicture(window.scrollY > window.innerHeight * 0.6);
     });
+    return () => window.removeEventListener("scroll", setIsShowPicture);
   }, []);
 
   return (
     <main id="accueil" className="main">
-      {/* Empty Div for background image and facilitate responsive */}
-      <div className="main__left"></div>
-      <div className="main__right">
-        <div
-          className={scroll ? "tdimension tdimension--scroll" : "tdimension"}
-        >
-          <div className="picture"></div>
-        </div>
+      <div className="main__container">
         <div className="profil__container">
           <h1 className="profil__title">
             Hell<span className="profil__title__span">o</span>!
           </h1>
+
           <p className="profil__text">
             Je suis Benjamin, Développeur Web junior, actuellement en recherche
             d'emploi dans les Côtes d'Armor ou en Full Remote.
@@ -70,57 +68,21 @@ function Homepage() {
               <p className="profil__name">React</p>
             </div>
           </div>
-
-          {/*           <table className="main__table">
-            <thead>
-              <tr>
-                <th colSpan="6">Langages</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="main__table--tr">
-                <td className="main__table--logo">
-                  <div className="main__table--div">
-                    <i className="table-icon fa-brands fa-html5"></i>
-                  </div>
-                  <p className="table__name">HTML</p>
-                </td>
-                <td className="main__table--logo">
-                  <div className="main__table--div">
-                  
-                    <i className="table-icon fa-brands fa-css3"></i>
-                  </div>
-                  <p className="table__name">CSS</p>
-                </td>
-                <td className="main__table--logo">
-                  <div className="main__table--div">
-                    <i className="table-icon fa-brands fa-php"></i>
-                  </div>
-                  <p className="table__name">PHP</p>
-                </td>
-                </tr>
-                <tr className="main__table--tr">
-                <td className="main__table--logo">
-                  <div className="main__table--div">
-                    <i className="table-icon fa-solid fa-database fa-2x"></i>
-                  </div>
-                  <p className="table__name">SQL</p>
-                </td>
-                <td className="main__table--logo">
-                  <div className="main__table--div">
-                    <i className="table-icon fa-brands fa-js"></i>
-                  </div>
-                  <p className="table__name">Javascript</p>
-                </td>
-                <td className="main__table--logo">
-                  <div className="main__table--div">
-                    <i className="table-icon fa-brands fa-react"></i>
-                  </div>
-                  <p className="table__name">React</p>
-                </td>
-              </tr>
-            </tbody>
-          </table> */}
+        </div>
+        <div className="main__right">
+          <img
+            src={portrait}
+            className={
+              isShowPicture
+                ? "main__picture main__picture--show"
+                : "main__picture"
+            }
+            alt="Portrait Benjamin"
+          />
+          <p className="main__picture--text">
+            N'hésitez pas à me rendre visite régulièrement, ce site sera mis à
+            jour à chaque nouveau projet.
+          </p>
         </div>
       </div>
     </main>
