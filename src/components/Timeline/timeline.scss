@@ -119,16 +119,16 @@
     transition: filter 0.5s ease;
     filter: grayscale(100%);
     &__bank {
-        background-image: url('../../assets/img/atm.jpeg');;
+        background-image: url('../../assets/img/timeline/atm.jpeg');;
     }
     &__supermarket {
-        background-image: url('../../assets/img/supermarket.jpeg');
+        background-image: url('../../assets/img/timeline/supermarket.jpeg');
     }
     &__studies {
-       background-image: url('../../assets/img/studies.jpeg');
+       background-image: url('../../assets/img/timeline/studies.jpeg');
     }
     &__computer {
-      background-image: url('../../assets/img/computer.jpeg');
+      background-image: url('../../assets/img/timeline/computer.jpeg');
     }
   }
 

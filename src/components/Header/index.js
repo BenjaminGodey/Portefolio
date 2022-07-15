@@ -14,6 +14,7 @@ function Header() {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 50);
     });
+    return () => window.removeEventListener("scroll", setScroll);
   }, []);
 
   return (

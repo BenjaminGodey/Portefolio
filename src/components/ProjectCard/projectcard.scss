@@ -1,0 +1,152 @@
+@use "src/styles/vars";
+
+.project-card {
+    width: 300px;
+    height: 385px;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   
+    transform: translateY(100%);
+    opacity: 0;
+    &1--show {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all 0.5s ease-in-out;
+    }
+    &1--show .project-card__title{
+        animation: animetitle 2s linear 0.5s 1 normal;
+    }
+    &2--show {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all 0.5s ease-in-out;
+        transition-delay: 250ms;
+    }
+    &2--show .project-card__title{
+        animation: animetitle 2s linear 1s 1 normal;
+    }
+    &3--show {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all 0.5s ease-in-out;
+        transition-delay: 500ms;
+    }
+    &3--show .project-card__title{
+        animation: animetitle 2s linear 1.5s 1 normal;
+    }
+
+
+    &::after {
+        content: "";
+        background: url("../../assets/img/projects/code.jpeg");
+        background-size: cover;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;   
+      }
+    
+    &__up {
+        height: 180px;
+        background-size: contain;
+
+    }
+    &__down {
+        display: flex;
+        flex-direction: column;
+        height: 169px;
+        justify-content:  space-between;;
+        align-items: center;
+    }
+    &__picture {
+        width: 90%;
+        border-radius: 10px;
+        margin: 15px auto 0 auto;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-family: rotonto;
+        text-shadow: 2px 0 , -2px 0 vars.$mainColor, 0 2px vars.$mainColor, 0 -2px vars.$mainColor,
+        1px 1px vars.$mainColor, -1px -1px vars.$mainColor, 1px -1px vars.$mainColor, -1px 1px vars.$mainColor;
+        font-family: verdana;
+        font-weight: 700;
+        color: #f5f5f5;
+    }
+
+    
+    &__presentation {
+        width: 90%;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    &__link {
+        display: block;
+        background-color: vars.$mainColor;
+        width: 120px;
+        border-radius: 5px;
+        padding: 5px 20px;
+        margin: 15px auto;
+    }
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+@keyframes animetitle {
+    0% {
+        text-shadow: 2px 0 , -2px 0 vars.$mainColor, 0 2px vars.$mainColor, 0 -2px vars.$mainColor,
+        1px 1px vars.$mainColor, -1px -1px vars.$mainColor, 1px -1px vars.$mainColor, -1px 1px vars.$mainColor;
+    }
+    50% {
+        text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 18px 6px rgba(16,16,16,0.4),
+        1px 22px 10px rgba(16,16,16,0.2),
+        1px 25px 35px rgba(16,16,16,0.2);
+    }
+    100% {
+        text-shadow: 2px 0 , -2px 0 vars.$mainColor, 0 2px vars.$mainColor, 0 -2px vars.$mainColor,
+        1px 1px vars.$mainColor, -1px -1px vars.$mainColor, 1px -1px vars.$mainColor, -1px 1px vars.$mainColor;
+    }
+}
