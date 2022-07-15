@@ -13,6 +13,7 @@ function Contact() {
     window.addEventListener("scroll", () => {
       setScrollContact(window.scrollY > window.innerHeight * 3.7);
     });
+    return () => window.removeEventListener("scroll", setScrollContact);
   }, []);
 
   const [toSend, setToSend] = useState({
