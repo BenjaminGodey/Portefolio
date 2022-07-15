@@ -1,6 +1,9 @@
 @use "src/styles/vars";
 .header {
-  background: url("../../assets/img/wall-textured.jpeg");
+  animation: scrollBackground 130s linear infinite;
+  background: url("../../assets/img/homepage/wall-texture.jpeg");
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
   // 90vh on first page because of nav size in position sticky
   height: 90vh;
   width: 100%;
@@ -160,6 +163,12 @@
   }
 }
 
+@keyframes scrollBackground {
+  100%{
+   background-position:0px -3000px;
+ }
+}
+
 @media screen and (max-width: 769px) {
   .header {
     &__title {
@@ -175,3 +184,4 @@
     }
   }
 }
+
