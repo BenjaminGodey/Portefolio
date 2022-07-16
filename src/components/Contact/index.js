@@ -1,8 +1,13 @@
 // == Import NPM
 import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
+
 // == import styles
 import "./contact.scss";
+
+// == Import Local
+import github from '../../assets/img/contact/github.png';
+import linkedin from '../../assets/img/contact/linkedin.png';
 
 // == Component
 function Contact() {
@@ -121,7 +126,7 @@ function Contact() {
           </div>
           <a className="contact__link" href="https://github.com/BenjaminGodey">
             <div className="contact__logo contact__logo--github">
-              <i className="contact__icon fa-brands fa-github"></i>
+            <img src={github} className="contact__icon" alt="logo linkedin" />
             </div>
           </a>
         </div>
@@ -158,7 +163,7 @@ function Contact() {
           </div>
           <a href="https://www.linkedin.com/in/benjamin-godey-162397162/">
             <div className="contact__logo contact__logo--linkedin">
-              <i className="contact__icon fa-brands fa-linkedin"></i>
+              <img src={linkedin} className="contact__icon" alt="logo linkedin" />
             </div>
           </a>
         </div>

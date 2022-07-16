@@ -60,6 +60,7 @@
         align-items: center;
         justify-content: space-around;
         position: relative;
+        overflow: hidden;
     }
     &__linkedin {
         width: 50%;
@@ -70,6 +71,7 @@
         align-items: center;
         justify-content: space-around;
         position: relative;
+        overflow: hidden;
     }
     &__link {
         position: absolute;
@@ -101,22 +103,16 @@
         background-color: white;
         transition: all 0.5s ease-in;
         }
-        &--github:hover {
-        background-color: #6e5494;
-        color: white;
-        }
         &--linkedin {
         color: #0077b5;
         background-color: white;
         transition: all 0.5s ease-in;
         }
-        &--linkedin:hover {
-        background-color: #0077b5;
-        color: white;
-        }
+
     }
     &__icon {
-        font-size: 3em;
+        width: 80%;
+        margin: 0 auto;
     }
 }
 .form {
@@ -173,7 +169,7 @@
 
 #circle svg {
   position: absolute;
-  width: 90%;
+  width: 85%;
   top: 0;
   left: 0;
   right: 0;
