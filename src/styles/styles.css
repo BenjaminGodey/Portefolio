@@ -1,4 +1,11 @@
 @font-face {
     font-family: "rotonto";
-    src: url('../assets/fonts/rotonto/RotontoTrial-Medium.otf');
+    src: url('../assets/fonts/RotontoTrial-Medium.otf');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "roboto";
+    src: url('../assets/fonts/Roboto-Regular.woff2');
+    font-display: swap;
   }

@@ -1,10 +1,5 @@
 @use "src/styles/vars";
 
-.image {
-  height: 90%;
-  width: 90%;
-
-}
 .main {
   height: 100vh;
   display: flex;
@@ -12,6 +7,7 @@
   align-items: center;
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 1) 95%), url('../../assets/img/homepage/mac.jpeg') no-repeat;
   background-size: cover;
+  overflow: hidden;
     &__container {
         height: 90vh;
         padding-top: 10vh;
@@ -93,28 +89,19 @@
     display: flex;
     align-items: center;
     transition: 0.4s ease-out;
-    &:hover {
-      background-color: #233439;
-    }
-    &:hover .profil__icon {
-      transform: rotateY(360deg);
-      color: white;
   }
+  &__icon {
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
   }
   &__name {
     width: 50%;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
-i {
-  color: #233439;
-  margin: 0 auto;
-  vertical-align: middle;
-  font-size: 2.5rem;
-  transition: 0.4s ease-out;
-}
 
 
 
@@ -151,16 +138,7 @@ i {
       font-size: 1.1em;
     }
   }
-  .main__table tr {
-    height: 5vw;
-  }
-  .main__table--div {
-    height: 3vw;
-    width: 3vw;
-  }
-  .table-icon {
-    font-size: 2vw;
-  }
+
 }
 
 @media screen and (max-width: 1400px) { 
